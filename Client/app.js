@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── Fetch Dynamic Content from API ─────────────────────────────────
-    fetch('https://cupofhope-api.onrender.com/api/content')
+    fetch('https://cupofhopeapi.onrender.com/api/content')
         .then(response => response.json())
         .then(data => {
             const ignoreKeys = ['programs', 'news', 'events', 'sponsors'];
