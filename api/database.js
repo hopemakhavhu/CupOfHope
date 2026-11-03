@@ -1,4 +1,9 @@
-const sqlite3 = require('@vscode/sqlite3').verbose();
+let sqlite3;
+try {
+    sqlite3 = require('@vscode/sqlite3').verbose();
+} catch (e) {
+    sqlite3 = require('sqlite3').verbose();
+}
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
