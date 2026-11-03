@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cup of Hope FM</title>
+    <link rel="icon" type="image/png" href="images/ChatGPT%20Image%20Jun%2019,%202026,%2011_11_16%20AM.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 1. Radiocast Hero Section (User's provided code) -->
+    <header class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="images/ChatGPT Image Jun 19, 2026, 11_11_16 AM.png" alt="Cup of Hope Logo" class="logo-img">
+        </a>
+        <nav class="radiocast-nav">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#programs">Programs</a>
+            <a href="#events_container" class="nav-item">Events</a>
+            <a href="#sponsors_container" class="nav-item">Sponsors</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+        <div class="nav-right">
+            <a href="#" class="btn-download"><i data-lucide="download" class="sm-icon"></i> Download App</a>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="icon-menu"></i>
+                <i data-lucide="x" class="icon-close" style="display: none;"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <!-- Background Slides -->
+        <div id="hero-background-container">
+            <div class="hero-slide active" style="background-image: url('images/ChatGPT Image Jun 19, 2026, 11_11_16 AM.png')"></div>
+            <div class="hero-slide" style="background-image: url('images/hero_radio.png')"></div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 id="hero_title">
+                Stream All Your <br>
+                Favorite Audio Content
+            </h1>
+            <p id="hero_subtitle">
+                Discover inspiring podcasts, live radio shows, and exclusive
+                interviews from creators around the world.
+            </p>
+        </div>
+    </section>
+
+    <!-- 2. Dark Sections (After Hero) -->
+    <main class="main-content">
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section fade-element">
+            <div class="about-tag">WHO WE ARE</div>
+            <div class="about-grid">
+
+                <!-- Left: Text Content -->
+                <div class="about-text-col">
+                    <h2 class="about-title" id="about_title">A Voice of <span class="about-title-accent">Hope</span><br>for Every Ear</h2>
+                    <p class="about-desc" id="about_desc1">
+                        Cup of Hope FM is a 24/7 community radio station powered by faith, music, and the relentless belief that every person deserves encouragement. Born from a heart to serve, we broadcast uplifting messages, live worship, prayer, and the best in gospel and inspirational music across South Africa and beyond.
+                    </p>
+                    <p class="about-desc" id="about_desc2">
+                        From our humble beginnings to a growing online presence, our mission remains unchanged — to pour out hope into hearts, homes, and communities one broadcast at a time.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">24<span class="stat-unit">/7</span></span>
+                            <span class="stat-label">Live Broadcasts</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">50<span class="stat-unit">k+</span></span>
+                            <span class="stat-label">Monthly Listeners</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">6<span class="stat-unit">+</span></span>
+                            <span class="stat-label">Years of Ministry</span>
+                        </div> 
+                    </div>
+ 
+                </div>
+
+                <!-- Right: Value Cards -->
+                <div class="about-values-col">
+                    <div class="about-value-card">
+                        <div class="value-icon-wrap pink-icon-wrap">
+                            <i data-lucide="radio"></i>
+                        </div>
+                        <div>
+                            <h4>Our Mission</h4>
+                            <p>To broadcast the message of hope, love, and faith — reaching souls across every community, every hour of the day.</p>
+                        </div>
+                    </div>
+                    <div class="about-value-card">
+                        <div class="value-icon-wrap orange-icon-wrap">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div>
+                            <h4>Our Community</h4>
+                            <p>A warm, faith-filled family of listeners, volunteers, and supporters who share one heartbeat — love for God and neighbour.</p>
+                        </div>
+                    </div>
+                    <div class="about-value-card">
+                        <div class="value-icon-wrap cyan-icon-wrap">
+                            <i data-lucide="mic"></i>
+                        </div>
+                        <div>
+                            <h4>Our Content</h4>
+                            <p>Anointed preaching, live worship, prayer lines, community news, and uplifting music — all crafted to inspire and transform.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FEATURED PROGRAMS -->
+        <section class="featured-programs" id="programs">
+            <div class="section-header">
+                <h2><i data-lucide="radio" class="orange-icon"></i> FEATURED PROGRAMS</h2>
+                <div class="carousel-nav">
+                    <button class="nav-arrow"><i data-lucide="chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="programs-grid" id="programs_container">
+                <!-- Dynamic Programs will be injected here -->
+            </div>
+        </section>
+
+        <!-- INFO HUB (3 COLUMNS) -->
+        <section class="info-hub-section">
+            <div class="info-hub-grid">
+                
+                <!-- COLUMN 1: LATEST NEWS -->
+                <div class="info-column fade-element">
+                    <div class="column-header">
+                        <h2 class="col-title news-title">LATEST NEWS</h2>
+                    </div>
+                    
+                    <div class="news-list" id="news_container">
+                        <!-- Dynamic News will be injected here -->
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: UPCOMING EVENTS -->
+                <div class="info-column fade-element">
+                    <div class="column-header">
+                        <h2 class="col-title events-title">UPCOMING EVENTS</h2>
+                    </div>
+                    
+                    <div class="events-list" id="events_container">
+                        <!-- Dynamic Events will be injected here -->
+                    </div>
+                </div>
+
+         
+
+            </div>
+        </section>
+
+        <!-- 4. SPONSORS PARALLAX SECTION -->
+        <section class="sponsors-section">
+            <!-- Background Slides -->
+            <div class="sponsors-slide active" style="background-image: url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1920&q=80')"></div>
+            <div class="sponsors-slide" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80')"></div>
+            <div class="sponsors-slide" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1920&q=80')"></div>
+            <div class="sponsors-slide" style="background-image: url('https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1920&q=80')"></div>
+
+            <div class="sponsors-overlay"></div>
+            <div class="sponsors-content fade-element">
+                <h2 class="sponsors-title">Proudly Supported By</h2>
+                <p class="sponsors-subtitle">The amazing partners who make our broadcasts possible.</p>
+                
+                <div class="sponsor-logos" id="sponsors_container">
+                    <!-- Dynamic Sponsors will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT & CHAT SECTION -->
+        <section class="contact-section" id="contact">
+            <div class="contact-grid fade-element">
+                
+                <!-- Chat With Us Info -->
+                <div class="info-column chat-column">
+                    <div class="column-header">
+                        <h2 class="col-title chat-title">CHAT WITH US</h2>
+                    </div>
+                    <div class="chat-content">
+                        <p class="chat-desc">We're here to connect, pray and share hope with you. Reach out via your preferred platform.</p>
+                        
+                        <div class="chat-buttons">
+                            <a href="https://wa.me/27843632052" target="_blank" class="btn-chat btn-whatsapp">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" class="chat-icon"> Chat on WhatsApp
+                            </a>
+                            <a href="#" class="btn-chat btn-messenger">
+                                <i data-lucide="message-circle" class="chat-icon"></i> Message on Messenger
+                            </a>
+                        </div>
+                        
+                        <div class="contact-details mt-4">
+                            <div class="contact-detail-item">
+                                <div class="detail-icon"><i data-lucide="map-pin"></i></div>
+                                <div>
+                                    <h4>Our Location</h4>
+                                    <p>Hope Community Centre, South Africa</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <div class="detail-icon"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <p>+27 84 363 2052</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-whatsapp">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+                    </div>
+                </div>
+
+                <!-- Email Form -->
+                <div class="contact-form-container">
+                    <div class="column-header mb-4">
+                        <h2 class="col-title" style="color: white;">SEND AN EMAIL</h2>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Prayer Request / Feedback" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Send Message</span>
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+            </div>
+        </section>
+
+        <!-- 6. APP DOWNLOAD SECTION -->
+        <section class="app-download-section fade-element">
+            <div class="app-download-box">
+                <div class="app-dl-top">
+                    <div class="app-dl-title-group">
+                        <h2 class="app-dl-title">TAKE US EVERYWHERE</h2>
+                        <span class="app-dl-cursive">everywhere</span>
+                    </div>
+                    <div class="app-dl-buttons" style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                        <a href="#" target="_blank" class="store-badge-link" style="display: inline-block; transition: transform 0.2s;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" style="height: 48px;">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.famcast.cupofhopefm" target="_blank" class="store-badge-link" style="display: inline-block; transition: transform 0.2s;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 48px;">
+                        </a>
+                    </div>
+                </div>
+                <div class="app-dl-bottom">
+                    <p>Stream your favorite live shows, exclusive Music sets, and top hits 24/7. Download the cupofhope app to take the ultimate radio experience wherever you go.<br>
+                    Don't miss a beat—listen on any device and stay connected to the music that moves you, anytime, anywhere. Experience high-fidelity audio, personalized recommendations, and offline listening. Stay tuned with breaking news, exclusive interviews, and curated playlists designed to match every mood and moment perfectly.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. FOOTER 
+    <footer class="site-footer fade-element">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo-link" style="display: inline-block;">
+                    <img src="logo.png" alt="Cup of Hope Logo" class="logo-img" style="height: 60px;">
+                </a>
+                <p>Bringing you the best in uplifting music, powerful messages, and community connection.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#">Podcasts</a>
+                <a href="#">Programs</a>
+                <a href="#">Events</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cup of Hope FM. All rights reserved.</p>
+        </div>
+    </footer>-->
+
+    <!-- 8. FLOATING RADIO PLAYER -->
+    <div class="floating-player">
+        <audio id="radio-stream" src="https://sv2.famcast.co.za:8835/stream" preload="none"></audio>
+        
+        <div class="player-left">
+            <button class="play-pause-btn" aria-label="Play Stream">
+                <i data-lucide="play" class="play-icon"></i>
+            </button>
+            <div class="now-playing-info">
+                <span class="live-label"><span class="red-dot"></span> LIVE ON AIR</span>
+                <div class="scrolling-text-container">
+                    <span class="scrolling-text" id="now-playing-text">Cup of Hope FM - Streaming Live</span>
+                </div>
+            </div>
+        </div>
+        <div class="player-right">
+            <div class="mini-equalizer" id="equalizer">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+            </div>
+            <button class="mute-btn" style="background:none;border:none;color:white;cursor:pointer;">
+                <i data-lucide="volume-2" class="volume-icon"></i>
+            </button>
+            <div class="volume-slider-bg" id="volume-slider">
+                <div class="volume-slider-fill" id="volume-fill" style="width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="news-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <h2 id="modal-title"></h2>
+            <p id="modal-date"></p>
+            <p id="modal-snippet"></p>
+        </div>
+    </div>
+
+    <!-- Script to load dynamic components and icons -->
+    <script src="app.js"></script>
+</body>
+</html>
