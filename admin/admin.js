@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData();
         formData.append('image', fileInput.files[0]);
 
-        const res = await fetch('https://cupofhope-api.onrender.com/api/upload', {
+        const res = await fetch('https://cupofhopeapi.onrender.com/api/upload', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`
