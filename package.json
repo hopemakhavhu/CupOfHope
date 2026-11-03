@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node api/server.js"
   },
-  "keywords": [],
+   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -16,6 +16,6 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "multer": "^2.2.0",
-    "@vscode/sqlite3": "^*"
+    "@vscode/sqlite3": "*"
   }
 }
