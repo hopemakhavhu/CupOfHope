@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const API_BASE = 'https://cupofhopeapi.onrender.com';
+
     const loginContainer = document.getElementById('login-container');
     const dashboardContainer = document.getElementById('dashboard-container');
     const loginForm = document.getElementById('login-form');
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const errorMsg = document.getElementById('login-error');
 
         try {
-            const res = await fetch('https://cupofhope-api.onrender.com/api/login', {
+            const res = await fetch(`${API_BASE}/api/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData();
         formData.append('image', fileInput.files[0]);
 
-        const res = await fetch('https://cupofhopeapi.onrender.com/api/upload', {
+        const res = await fetch(`${API_BASE}/api/upload`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -108,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const token = localStorage.getItem('cms_token');
 
-            const res = await fetch('https://cupofhopeapi.onrender.com/api/content', {
+            const res = await fetch(`${API_BASE}/api/content`, {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -144,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Fetch current content
         try {
-            const res = await fetch('https://cupofhopeapi.onrender.com/api/content');
+            const res = await fetch(`${API_BASE}/api/content`);
             if (res.ok) {
                 const data = await res.json();
                 
