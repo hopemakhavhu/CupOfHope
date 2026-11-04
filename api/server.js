@@ -64,8 +64,10 @@ app.post('/api/upload', authenticateToken, upload.single('image'), (req, res) =>
     if (!req.file) {
         return res.status(400).json({ error: 'No file uploaded' });
     }
-    // Return the URL for the uploaded file
-    res.json({ url: 'https://cupofhope-api.onrender.com/uploads/' + req.file.filename });
+    // Return the URL for the uploaded file using the actual request host
+    const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+    const host = req.get('host');
+    res.json({ url: `${protocol}://${host}/uploads/${req.file.filename}` });
 });
 
 // API: Get all content
