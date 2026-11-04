@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const token = localStorage.getItem('cms_token');
 
-            const res = await fetch('https://cupofhope-api.onrender.com/api/content', {
+            const res = await fetch('https://cupofhopeapi.onrender.com/api/content', {
                 method: 'PUT',
                 headers: { 
                     'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Fetch current content
         try {
-            const res = await fetch('https://cupofhope-api.onrender.com/api/content');
+            const res = await fetch('https://cupofhopeapi.onrender.com/api/content');
             if (res.ok) {
                 const data = await res.json();
                 
