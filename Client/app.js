@@ -67,6 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── Fetch Dynamic Content from API ─────────────────────────────────
+    function formatImgUrl(url) {
+        if (!url || url === 'null' || url === 'undefined') return '';
+        // Automatically correct any URL saved with the hyphen typo
+        return url.replace('cupofhope-api.onrender.com', 'cupofhopeapi.onrender.com');
+    }
+
     fetch('https://cupofhopeapi.onrender.com/api/content')
         .then(response => response.json())
         .then(data => {
@@ -83,7 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.hero_bg) {
                 const heroContainer = document.getElementById('hero-background-container');
                 if (heroContainer) {
-                    heroContainer.innerHTML = `<div class="hero-slide active" style="background-image: url('${data.hero_bg}')"></div>`;
+                    const heroImg = formatImgUrl(data.hero_bg);
+                    heroContainer.innerHTML = `<div class="hero-slide active" style="background-image: url('${heroImg}')"></div>`;
                 }
             }
 
@@ -92,16 +99,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const programs = JSON.parse(data.programs);
                 const container = document.getElementById('programs_container');
                 if (container) {
-                    container.innerHTML = programs.map(p => `
+                    container.innerHTML = programs.map(p => {
+                        const imgUrl = formatImgUrl(p.image);
+                        return `
                         <div class="program-card fade-element visible">
-                            ${p.image && p.image !== 'null' && p.image !== 'undefined' ? `<img src="${p.image}" alt="${p.title}" class="program-img">` : ''}
+                            ${imgUrl ? `<img src="${imgUrl}" alt="${p.title}" class="program-img">` : ''}
                             <div class="program-info">
                                 <h3>${p.title}</h3>
                                 <span class="time">${p.time}</span>
                                 <p>${p.desc}</p>
                             </div>
                         </div>
-                    `).join('');
+                    `;
+                    }).join('');
                 }
             }
 
@@ -113,18 +123,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (news.length === 0) {
                         container.innerHTML = '<div class="empty-state">No latest news available right now.</div>';
                     } else {
-                        container.innerHTML = news.map((n, i) => `
-                        <article class="news-item">
-                            ${n.image && n.image !== 'null' && n.image !== 'undefined' ? `<img src="${n.image}" alt="${n.title}" class="news-img">` : ''}
-                            <div class="news-content">
-                                <h3 class="news-item-title">${n.title}</h3>
-                                <span class="news-date">${n.date}</span>
-                                <p class="news-snippet">${n.snippet}</p>
-                                <a href="#" class="read-more" data-index="${i}">Read More <i data-lucide="arrow-right" class="sm-icon"></i></a>
-                            </div>
-                        </article>
-                        ${i < news.length - 1 ? '<div class="news-divider"></div>' : ''}
-                    `).join('');
+                        container.innerHTML = news.map((n, i) => {
+                            const imgUrl = formatImgUrl(n.image);
+                            return `
+                            <article class="news-item">
+                                ${imgUrl ? `<img src="${imgUrl}" alt="${n.title}" class="news-img">` : ''}
+                                <div class="news-content">
+                                    <h3 class="news-item-title">${n.title}</h3>
+                                    <span class="news-date">${n.date}</span>
+                                    <p class="news-snippet">${n.snippet}</p>
+                                    <a href="#" class="read-more" data-index="${i}">Read More <i data-lucide="arrow-right" class="sm-icon"></i></a>
+                                </div>
+                            </article>
+                            ${i < news.length - 1 ? '<div class="news-divider"></div>' : ''}
+                        `;
+                        }).join('');
                     }
 
                     // Add click listeners to "Read More" links
@@ -143,8 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             document.getElementById('modal-snippet').textContent = newsItem.snippet;
                             
                             const img = document.getElementById('modal-img');
-                            if (newsItem.image && newsItem.image !== 'null' && newsItem.image !== 'undefined') {
-                                img.src = newsItem.image;
+                            const modalImgUrl = formatImgUrl(newsItem.image);
+                            if (modalImgUrl) {
+                                img.src = modalImgUrl;
                                 img.style.display = 'block';
                             } else {
                                 img.style.display = 'none';
@@ -214,12 +228,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const sponsors = JSON.parse(data.sponsors);
                 const container = document.getElementById('sponsors_container');
                 if (container) {
-                    container.innerHTML = sponsors.map(s => `
+                    container.innerHTML = sponsors.map(s => {
+                        const imgUrl = formatImgUrl(s.image);
+                        return `
                         <div class="sponsor-logo-box">
-                            ${s.image ? `<img src="${s.image}" alt="${s.name}" class="sponsor-img" style="max-height: 40px; margin-bottom: 10px;">` : ''}
+                            ${imgUrl ? `<img src="${imgUrl}" alt="${s.name}" class="sponsor-img" style="max-height: 40px; margin-bottom: 10px;">` : ''}
                             <span>${s.name}</span>
                         </div>
-                    `).join('');
+                    `;
+                    }).join('');
                 }
             }
 
