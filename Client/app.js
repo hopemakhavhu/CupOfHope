@@ -64,6 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
             iconMenu.style.display  = isOpen ? 'none'  : 'block';
             iconClose.style.display = isOpen ? 'block' : 'none';
         });
+
+        // Close mobile menu when a nav link is clicked
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                iconMenu.style.display  = 'block';
+                iconClose.style.display = 'none';
+            });
+        });
     }
 
     // ── Fetch Dynamic Content from API ─────────────────────────────────
