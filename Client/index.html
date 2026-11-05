@@ -241,24 +241,25 @@
                     <div class="column-header mb-4">
                         <h2 class="col-title" style="color: white;">SEND AN EMAIL</h2>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="6581c816-2445-496a-b1cf-0e0e6c447e5b">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" id="name" placeholder="John Doe" required>
+                                <input type="text" id="name" name="name" placeholder="Hope Makhavhu" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" placeholder="john@example.com" required>
+                                <input type="email" id="email" name="email" placeholder="[EMAIL_ADDRESS]" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="Prayer Request / Feedback" required>
+                            <input type="text" id="subject" name="subject" placeholder="Prayer Request / Feedback" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">
                             <span>Send Message</span>
